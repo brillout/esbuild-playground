@@ -1,7 +1,11 @@
-import { someExportName } from './onRenderHtml'
-import passToClient from './passToClient'
+//*/
+import { someExportName, exp2 } from './onRenderHtml' with { type: "fake" };
+/*/
+import { someExportName, exp2 } from './onRenderHtml' with { type: "real" };
+//*/
 
 export default {
   someExportName,
-  passToClient
+  exp2,
+  passToClient: ['bla']
 }
