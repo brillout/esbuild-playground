@@ -21,18 +21,31 @@ async function main() {
     plugins: [{
       name: 'vike-url-resolver',
       setup(build) {
-        build.onLoad({filter: /\.jsx/}, async (args, ...rest) => {
+        build.onResolve({filter: /.*/}, async (args, ...rest) => {
+          if (args.kind !== 'import-statement') return
+          if (args.pluginData?.useEsbuildResolve) return
+          console.log();
+          console.log('== onResolve()');
           console.log('rest', rest);
           console.log('args', args);
-          return {
-            contents: args.path,
-            loader: 'text',
+          const {path, ...opts} = args
+          opts.pluginData = {
+            useEsbuildResolve: true,
           }
+          const resolved = await build.resolve(path, opts)
+          console.log('path', resolved.path)
+          if (resolved.path.endsWith('.jsx')) {
+            resolved.external = true
+          }
+          return resolved
         })
       }
     }]
   });
 
   //console.log(result);
-  console.log(result.outputFiles[0].text);
+  const {text} = result.outputFiles[0]
+  console.log();
+  console.log('== text');
+  console.log(text);
 }
