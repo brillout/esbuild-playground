@@ -16,6 +16,6 @@ async function main() {
     minify: false,
   });
 
-  console.log(result);
+  //console.log(result);
   console.log(result.outputFiles[0].text);
 }
