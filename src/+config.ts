@@ -1,15 +1,7 @@
-import { someExportName } from './onRenderHtml'
-/*
-import onRenderClient from './+config/onRenderClient'
-import { PageLayout as PG2 } from './+config/PageLayout'
-import type { Config } from 'vite-plugin-ssr/types'
-*/
-
-// console.log(PG2)
-console.log(11);
+//import { someExportName } from './onRenderHtml'
+import someExportName from './onRenderHtml'
 
 export default {
-  onRenderClient,
-  onRenderHtml,
-  passToClient: ['pageProps']
-} satisfies Config
+  someExportName,
+  passToClient: ['bla']
+}
