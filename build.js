@@ -12,7 +12,11 @@ async function main() {
     outfile: "NEVER_EMITTED.js",
     logLevel: "silent",
     format: "esm",
+    /*/
     bundle: false,
+    /*/
+    bundle: true,
+    //*/
     minify: false,
   });
 
