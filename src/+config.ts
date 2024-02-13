@@ -1,4 +1,4 @@
-import onRenderHtml from './onRenderHtml'
+import { someExportName } from './onRenderHtml'
 /*
 import onRenderClient from './+config/onRenderClient'
 import { PageLayout as PG2 } from './+config/PageLayout'

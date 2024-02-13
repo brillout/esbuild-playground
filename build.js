@@ -18,6 +18,19 @@ async function main() {
     bundle: true,
     //*/
     minify: false,
+    plugins: [{
+      name: 'vike-url-resolver',
+      setup(build) {
+        build.onLoad({filter: /\.jsx/}, async (args, ...rest) => {
+          console.log('rest', rest);
+          console.log('args', args);
+          return {
+            contents: args.path,
+            loader: 'text',
+          }
+        })
+      }
+    }]
   });
 
   //console.log(result);
