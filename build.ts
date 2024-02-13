@@ -4,7 +4,7 @@ main();
 
 async function main() {
   const result = await esbuild.build({
-    entryPoints: ["./+config.ts"],
+    entryPoints: ["./src/+config.ts"],
     platform: "node",
     sourcemap: false,
     write: false,
