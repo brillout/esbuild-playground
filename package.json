@@ -1,10 +1,10 @@
 {
-  "scripts": {
-    "start": "ts-node -T ./build.ts"
-  },
+	"scripts": {
+		"start": "ts-node -T ./build.ts"
+	},
 	"dependencies": {
 		"@types/node": "^18.15.11",
-		"esbuild": "^0.17.14",
+		"esbuild": "^0.20.0",
 		"ts-node": "^10.9.1",
 		"typescript": "^5.0.3"
 	}
